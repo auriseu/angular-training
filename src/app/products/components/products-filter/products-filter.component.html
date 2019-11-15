@@ -1,0 +1,26 @@
+<div class="search-bar">
+
+  <table>
+    <tr>
+      <td>
+        <span>Product name: </span>
+      </td>
+      <td>
+        <input (input)="triggerChange()" type="text" [(ngModel)]="nameTerm">
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <span>Product size: </span>
+      </td>
+      <td>
+        <select (change)="triggerChange()"  [(ngModel)]="productSize">
+          <option value="L">Large</option>
+          <option value="M">Medium</option>
+          <option value="S">Small</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,40 @@
+<div style="width: 90%">
+  <div style="width: 50%; display: inline-block">
+    <h1>Product list</h1>
+
+    <app-products-filter (filterChange)="setProductFilter($event)"></app-products-filter>
+
+    <table class="custom-table">
+      <thead class="header">
+      <tr>
+        <th></th>
+        <th>NAME</th>
+        <th>PRICE</th>
+        <th>SIZE</th>
+        <th>DESCRIPTION</th>
+        <th></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let product of products | productsFilter: productsFilter | productsSizeFilter: productsFilter" style="margin: 20px">
+        <td style="width: 100px">
+          <button (click)="addToCart(product)">Add to chart</button>
+        </td>
+
+        <td>{{product.name}}</td>
+        <td>{{product.price | currency: 'EUR'}}</td>
+        <td>{{product.size}}</td>
+        <td>{{product.description}}</td>
+        <td>
+          <a routerLink="product/{{product.id}}">Details</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="display: inline-block; float: right">
+    <app-cart></app-cart>
+  </div>
+</div>

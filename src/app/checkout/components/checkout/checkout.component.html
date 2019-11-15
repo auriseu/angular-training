@@ -1,0 +1,70 @@
+<div>
+  <h1>Checkout</h1>
+
+  <div *ngIf="checkOutInfo === null; else checkoutDone">
+    <form [formGroup]="userForm" (ngSubmit)="submit()">
+      <table>
+        <tr>
+          <td> Name:</td>
+          <td><input type="text" formControlName="fullName" required></td>
+        </tr>
+
+        <tr>
+          <td>Email:</td>
+          <td><input type="text" formControlName="email"></td>
+        </tr>
+
+        <tr>
+          <td>Street:</td>
+          <td><input type="text" formControlName="street"></td>
+        </tr>
+
+        <tr>
+          <td>Card number:</td>
+          <td><input type="text" formControlName="cardNumber"></td>
+        </tr>
+
+        <tr>
+          <div *ngIf="userForm.invalid && (userForm.dirty || userForm.touched)" class="alert alert-danger">
+
+          </div>
+        </tr>
+
+        <tr>
+          <button type="submit">Submit</button>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+  <ng-template #checkoutDone>
+    <div>
+      <h2>Checkout done!</h2>
+
+      <table class="custom-table">
+        <thead class="header">
+        <tr>
+          <th></th>
+          <th>NAME</th>
+          <th>PRICE</th>
+          <th>SIZE</th>
+          <th>DESCRIPTION</th>
+          <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let product of checkOutInfo.products" style="margin: 20px">
+          <td>{{product.name}}</td>
+          <td>{{product.price | currency: 'EUR'}}</td>
+          <td>{{product.size}}</td>
+          <td>{{product.description}}</td>
+          <td>
+            <a routerLink="../product/{{product.id}}">Details</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-template>
+</div>

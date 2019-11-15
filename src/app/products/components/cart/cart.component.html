@@ -1,0 +1,33 @@
+<h1>Cart</h1>
+
+<div *ngIf="items.length > 0; else emptyCart">
+  <table class="custom-table">
+    <thead class="header">
+    <tr>
+      <th>NAME</th>
+      <th>PRICE</th>
+      <th>SIZE</th>
+      <th>
+        <button (click)="clear()">Clear</button>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let product of items" style="margin: 20px">
+      <td>{{product.name}}</td>
+      <td>{{product.price | currency: 'EUR'}}</td>
+      <td>{{product.size}}</td>
+      <td style="width: 100px">
+        <button (click)="remove(product)">Remove</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <button (click)="checkout()">Checkout</button>
+</div>
+
+<ng-template #emptyCart>
+  <span>Your cart is empty</span>
+</ng-template>

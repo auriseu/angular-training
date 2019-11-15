@@ -1,0 +1,55 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "name": "Nokia",
+      "description": "last product",
+      "price": 100,
+      "size": "L"
+    },
+    {
+      "id": 1,
+      "name": "Xiaomi",
+      "description": "first product",
+      "price": 300,
+      "size": "S"
+    },
+    {
+      "id": 2,
+      "name": "Iphone",
+      "description": "second product",
+      "price": 500,
+      "size": "S"
+    },
+    {
+      "id": 3,
+      "name": "Samsung",
+      "description": "test",
+      "price": 600,
+      "size": "M"
+    },
+    {
+      "id": 4,
+      "name": "Huawei",
+      "description": "AA",
+      "price": 900,
+      "size": "L"
+    }
+  ],
+  "checkout": {
+    "products": [
+      {
+        "id": 0,
+        "name": "Nokia",
+        "description": "last product",
+        "price": 100,
+        "size": "L"
+      }
+    ],
+    "fullName": "",
+    "email": "",
+    "street": "",
+    "cardNumber": "",
+    "id": 11
+  }
+}

@@ -1,0 +1,18 @@
+<div *ngIf="(product$ | async) as product">
+  <h1>{{ product.name }}</h1>
+
+  <table>
+    <tr>
+      <td>Price:</td>
+      <td>{{product.price | currency: 'EUR'}}</td>
+    </tr>
+    <tr>
+      <td>Size:</td>
+      <td>{{product.size}}</td>
+    </tr>
+    <tr>
+      <td>Description:</td>
+      <td>{{product.description}}</td>
+    </tr>
+  </table>
+</div>
